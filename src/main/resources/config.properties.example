@@ -1,0 +1,5 @@
+##### Database config ... #####
+database.driverClassName=com.mysql.jdbc.Driver
+database.url=jdbc:mysql://localhost/DB_NAME
+database.username=USER
+database.password=PASSWORD
