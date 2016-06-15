@@ -4,6 +4,7 @@
        xmlns:contex="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:util="http://www.springframework.org/schema/util" xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/mvc
@@ -11,7 +12,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/util
-       http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+       http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 
     <!-- scan packages -->
     <contex:component-scan base-package="com.eathquakemon"/>
@@ -28,6 +29,16 @@
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!-- websocket configuration -->
+    <websocket:message-broker application-destination-prefix="/app">
+        <!-- endpoint -->
+        <websocket:stomp-endpoint path="/earthquakesocket">
+            <websocket:sockjs/>
+        </websocket:stomp-endpoint>
+        <!-- suscribers prefix: send notification to clients -->
+        <websocket:simple-broker prefix="/notification/"/>
+    </websocket:message-broker>
 
 
     <!-- datasource for mysql -->
