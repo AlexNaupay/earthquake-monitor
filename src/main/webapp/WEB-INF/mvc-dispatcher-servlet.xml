@@ -15,7 +15,7 @@
        http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 
     <!-- scan packages -->
-    <contex:component-scan base-package="com.eathquakemon"/>
+    <contex:component-scan base-package="com.earthquakemon"/>
 
     <!-- mvc anotation  -->
     <mvc:annotation-driven/>
@@ -45,12 +45,12 @@
     <!--<jee:jndi-lookup id="dataSource" jndi-name="java:jboss/datasources/MySQLDS"
                      resource-ref="true" expected-type="javax.sql.DataSource" />-->
 
-    <!--<bean id="dataSourceLocal" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="dataSourceLocal" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${database.driverClassName}"/>
         <property name="url" value="${database.url}"/>
         <property name="username" value="${database.username}"/>
         <property name="password" value="${database.password}"/>
     </bean>
     <util:properties id="config" location="classpath:config.properties" />
-    <contex:property-placeholder properties-ref="config" />-->
+    <contex:property-placeholder properties-ref="config" />
 </beans>
