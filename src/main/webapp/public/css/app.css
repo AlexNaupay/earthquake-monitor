@@ -49,3 +49,62 @@ footer.page-footer {
 }
 
 /* =========================== CSS =========================== */
+#back-button{
+    cursor: pointer;
+}
+
+
+#logo-container > img{
+    height: 54px;
+    margin-top: 5px;
+}
+
+#mapview {
+    height: 710px;
+    margin-bottom: 15px;
+}
+
+.content{
+    margin: 25px auto;
+    max-width: 1700px;
+}
+
+.earthquake-item{
+    cursor: pointer;
+    min-height: auto !important;
+    transition: 350ms all;
+}
+
+.earthquake-item:hover{
+    background-color: #d1d1d1;
+    transition: 350ms all;
+}
+
+.earthquakes-collection{
+    max-height: 650px;
+    overflow-y: auto;
+}
+
+.last-update{
+    background-color: #448AFF;
+    color: #e1e1e1;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+}
+
+.magnitude{
+    line-height: 42px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.page-footer a{
+    font-weight: lighter !important;
+}
+
+.time-format{
+    color: #777777;
+}

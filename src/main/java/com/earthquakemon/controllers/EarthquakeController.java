@@ -35,7 +35,7 @@ public class EarthquakeController implements Brodcaster{
 
     @RequestMapping("/latest")
     public @ResponseBody List<Earthquake> latest(){
-        List<Earthquake> earthquakes = earthquakeService.findAll(50);
+        List<Earthquake> earthquakes = earthquakeService.findAll(35);
         System.out.println(earthquakes.size());
         return earthquakes;
     }

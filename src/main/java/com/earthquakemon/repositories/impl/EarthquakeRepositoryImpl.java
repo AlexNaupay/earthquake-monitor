@@ -59,10 +59,17 @@ public class EarthquakeRepositoryImpl implements EarthquakeRepository {
 
     @Override
     public Earthquake save(Earthquake earthquake) {
-        Map<String, Object> parameters = new HashMap<>(14);
+
+        if (findById(earthquake.getId()) != null){
+            logger.info("Exist earthquake with id " + earthquake.getId());
+            return null;
+        }
+
+        Map<String, Object> parameters = new HashMap<>(15);
         //parameters.put("id_pk", earthquake.getIdPk());
         parameters.put("id", earthquake.getId());
         parameters.put("titulo", earthquake.getTitulo());
+        parameters.put("alerta", earthquake.getAlerta());
         parameters.put("magnitud", earthquake.getMagnitud());
         parameters.put("lugar", earthquake.getLugar());
         parameters.put("tiempo", earthquake.getTiempo());

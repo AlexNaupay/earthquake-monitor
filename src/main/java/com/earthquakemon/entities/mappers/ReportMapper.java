@@ -49,7 +49,7 @@ public class ReportMapper {
      * Este metodo es usado por el metodo superior mapper()
      *
      * @param objetosfeatures Una Lista de Feature
-     * @param contador        Numero de resultados, tiene que ser mayor a cero
+     * @param contador Numero de resultados, tiene que ser mayor a cero
      * @return
      */
     public static List<Earthquake> featuresToEarquakes(List<Feature> objetosfeatures, int contador) {
@@ -59,6 +59,7 @@ public class ReportMapper {
         sismos = new ArrayList<Earthquake>();
 
         String id;
+        String alerta;
         String titulo;
         double magnitud;
         String lugar;
@@ -81,6 +82,7 @@ public class ReportMapper {
         for (int i = 0; i < contador; i++) {
             //Capturar variables desde la lista de Features del Json Original.
             id = objetosfeatures.get(i).getId();
+            alerta = objetosfeatures.get(i).getProperties().getAlert();
             titulo = objetosfeatures.get(i).getProperties().getTitle();
             magnitud = objetosfeatures.get(i).getProperties().getMag();
             lugar = objetosfeatures.get(i).getProperties().getPlace();
@@ -99,7 +101,7 @@ public class ReportMapper {
 
             significancia = objetosfeatures.get(i).getProperties().getSig();
 
-            temporal = new Earthquake(id, titulo, magnitud, lugar, tiempo, actualizacion, url, urldetalle, tsunami, tipo, longitud, latitud, profundidad, significancia);
+            temporal = new Earthquake(id, alerta,titulo, magnitud, lugar, tiempo, actualizacion, url, urldetalle, tsunami, tipo, longitud, latitud, profundidad, significancia);
             sismos.add(temporal);
         }
 

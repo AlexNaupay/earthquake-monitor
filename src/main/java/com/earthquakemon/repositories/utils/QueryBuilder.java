@@ -19,12 +19,9 @@ public class QueryBuilder {
     public static final String LATEST_QUERY = "SELECT * FROM (SELECT * FROM sismos ORDER BY id_pk DESC LIMIT #limit#)  tbl ORDER BY tbl.id_pk";
     public static final String FIND_BY_ID_QUERY = "SELECT * FROM sismos WHERE id = ?";
 
-    public static final String CONSULTA_SELECT_TODO = "SELECT * FROM sismos";
-
     public static final String CONSULTA_SELECT_TIEMPO = "SELECT * FROM sismos " + "WHERE tiempo ";
 
     public static final String ORDEN_FECHA = " ORDER BY tiempo";
-    public static final String ORDEN_MAGNITUD = " ORDER BY magnitud";
 
 
     public static String latestEarthquakesQuery(int limit){

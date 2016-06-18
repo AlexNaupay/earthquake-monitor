@@ -6,6 +6,8 @@ public class Earthquake {
 
     private long idPk;
 
+	private String alerta;
+
 	//Llave primaria del Earthquake
 	private String id;
 	
@@ -49,12 +51,13 @@ public class Earthquake {
     public Earthquake() {
     }
 
-    public Earthquake(String id, String titulo, double magnitud, String lugar,
+    public Earthquake(String id,String alerta ,String titulo, double magnitud, String lugar,
                       Date tiempo, Date actualizacion, String url, String urldetalle,
                       int tsunami, String tipo, double longitud, double latitud,
                       double profundidad, int significancia) {
 		super();
 		this.id = id;
+		this.alerta = alerta;
 		this.titulo = titulo;
 		this.magnitud = magnitud;
 		this.lugar = lugar;
@@ -77,6 +80,14 @@ public class Earthquake {
     public void setIdPk(long idPk) {
         this.idPk = idPk;
     }
+
+	public String getAlerta() {
+		return alerta;
+	}
+
+	public void setAlerta(String alerta) {
+		this.alerta = alerta;
+	}
 
     public String getId() {
 		return id;
