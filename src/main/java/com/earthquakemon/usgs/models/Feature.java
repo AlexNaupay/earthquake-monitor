@@ -6,9 +6,12 @@ public class Feature {
 	private String type; //Valor fijo= "Feature"
 	private Properties properties;
 	private Geometry geometry;
-	
+
+	public Feature() {
+	}
+
 	public Feature(String id, String type, Properties properties,
-			Geometry geometry) {
+				   Geometry geometry) {
 		super();
 		this.id = id;
 		this.type = type;

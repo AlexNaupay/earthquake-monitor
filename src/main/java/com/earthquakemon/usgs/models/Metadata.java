@@ -8,7 +8,10 @@ public class Metadata {
     private String api;
     private int count;
     private int status;
-    
+
+	public Metadata() {
+	}
+
 	public Metadata(long generated, String url, String title, String api, int count, int status) {
 		super();
 		this.generated = generated;

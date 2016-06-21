@@ -1,5 +1,7 @@
 package com.earthquakemon.utils;
 
+import org.springframework.web.client.RestTemplate;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -36,4 +38,10 @@ public class ServerRequest {
         }
         return resultado;
     }
+
+    public static String requestString(String urlRequest){
+        RestTemplate restTemplate = new RestTemplate();
+        return   restTemplate.getForObject(urlRequest, String.class);
+    }
+
 }

@@ -10,6 +10,7 @@ import com.earthquakemon.usgs.models.FeatureCollection;
 import com.earthquakemon.utils.ServerRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -22,6 +23,14 @@ public class EarthquakeServiceImpl implements EarthquakeService {
     @Override
     public Report fetchHigher(float magnitude) {
         String report = ServerRequest.request(URL_CONSULTA);
+        FeatureCollection featureCollection = FeatureCollectionMapper.mapperRow(report);
+
+        return ReportMapper.mapper(featureCollection);
+    }
+
+    @Override
+    public Report fetchHigher() {
+        String report = ServerRequest.requestString(URL_CONSULTA);
         FeatureCollection featureCollection = FeatureCollectionMapper.mapperRow(report);
 
         return ReportMapper.mapper(featureCollection);

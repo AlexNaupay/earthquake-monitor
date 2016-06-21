@@ -29,7 +29,8 @@ public class BashRequestUSGS extends Thread{
 
     public void run(){
         while (true){
-            Report report = earthquakeService.fetchHigher(2.3f);
+            // Report report = earthquakeService.fetchHigher(2.3f);
+            Report report = earthquakeService.fetchHigher();
 
             List<Earthquake> list = report.getEarthquakes();
             if (list != null)

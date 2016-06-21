@@ -10,12 +10,15 @@ public class FeatureCollection {
 	private List<Feature> features;
 	private double [] bbox;
 
+	public FeatureCollection() {
+	}
+
 	public FeatureCollection(String type, Metadata metadata,
-			List<Feature> feautures, double[] bbox) {
+                             List<Feature> features, double[] bbox) {
 		super();
 		this.type = type;
 		this.metadata = metadata;
-		this.features = feautures;
+		this.features = features;
 		this.bbox = bbox;
 	}
 

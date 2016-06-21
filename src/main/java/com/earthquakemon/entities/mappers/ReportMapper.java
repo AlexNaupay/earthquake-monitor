@@ -78,7 +78,6 @@ public class ReportMapper {
 
         Earthquake temporal;
 
-
         for (int i = 0; i < contador; i++) {
             //Capturar variables desde la lista de Features del Json Original.
             id = objetosfeatures.get(i).getId();

@@ -33,6 +33,9 @@ public class Properties {
     private String type;
     private String title;
 
+    public Properties() {
+    }
+
     public Properties(double mag, String place, long time, long updated,
                       int tz, String url, String detail, int felt, double cdi,
                       double mmi, String alert, String status, int tsunami, int sig,

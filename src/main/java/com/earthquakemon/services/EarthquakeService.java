@@ -17,6 +17,12 @@ public interface EarthquakeService {
      */
     Report fetchHigher(float magnitude);
 
+    /**
+     * Fetch earthquakes higher than magnitude from remote server, using RestTemplate
+     * @return Report object
+     */
+    Report fetchHigher();
+
 
     /**
      * Retrieve all earthquakes

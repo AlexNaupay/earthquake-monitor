@@ -6,7 +6,10 @@ public class Geometry {
 
 	//Vector tamaño 3  [ longitude, latitude, depth ]
 	private double[] coordinates;
-	
+
+	public Geometry() {
+	}
+
 	public Geometry(String type, double[] coordinates) {
 		super();
 		this.type = type;
