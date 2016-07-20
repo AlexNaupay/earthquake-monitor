@@ -40,8 +40,14 @@ public class ServerRequest {
     }
 
     public static String requestString(String urlRequest){
-        RestTemplate restTemplate = new RestTemplate();
-        return   restTemplate.getForObject(urlRequest, String.class);
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+            return   restTemplate.getForObject(urlRequest, String.class);
+        }catch (Exception e ){
+            System.out.println("Exception on ServerRequest.class");
+            return "";
+        }
+
     }
 
 }

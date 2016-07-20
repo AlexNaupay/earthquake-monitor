@@ -23,6 +23,8 @@ public class ReportMapper {
         Report reporte = null;
         List<Earthquake> sismos;
 
+        if (objetosjson == null) return null;
+
         //Capturar datos desde el Objeto JSON convertido
         Date fechagenerado = new Date(objetosjson.getMetadata().getGenerated());
         int contador = objetosjson.getMetadata().getCount();

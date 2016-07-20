@@ -32,18 +32,22 @@ public class BashRequestUSGS extends Thread{
             // Report report = earthquakeService.fetchHigher(2.3f);
             Report report = earthquakeService.fetchHigher();
 
-            List<Earthquake> list = report.getEarthquakes();
-            if (list != null)
+            if (report != null){
+                List<Earthquake> list = report.getEarthquakes();
+                if (list != null)
                     list = earthquakeService.save(list);
-            report.setEarthquakes(list);
+                report.setEarthquakes(list);
 
-            brodcaster.broadcast(Brodcaster.LATEST_EARTHQUAKE, report);
-            logger.info("Request time: " + new Date().toString());
-            try {
-                // 1000*60*X = X min ; 5min = 300 000
-                Thread.sleep(300000);
-            } catch (InterruptedException e) {
-                logger.error("*** fail sleep method");
+                brodcaster.broadcast(Brodcaster.LATEST_EARTHQUAKE, report);
+                logger.info("Request time: " + new Date().toString());
+                try {
+                    // 1000*60*X = X min ; 5min = 300 000
+                    Thread.sleep(300000);
+                } catch (InterruptedException e) {
+                    logger.error("*** fail sleep method");
+                }
+            }else {
+                logger.error("HORROR::::: on remote server.");
             }
         }
     }
