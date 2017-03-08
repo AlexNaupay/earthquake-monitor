@@ -45,21 +45,21 @@
 
 
 <!--  Scripts-->
-<script defer src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script defer src="<c:url value="public/vendors/underscore/underscore-min.js"/>"></script>
-<script defer src="<c:url value="public/vendors/materialize/js/materialize.min.js"/>"></script>
-<script defer src="<c:url value="public/vendors/momentjs/moment-with-locales.min.js"/>"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="<c:url value="public/vendors/underscore/underscore-min.js"/>"></script>
+<script src="<c:url value="public/vendors/materialize/js/materialize.min.js"/>"></script>
+<script src="<c:url value="public/vendors/momentjs/moment-with-locales.min.js"/>"></script>
 
 <%-- https://github.com/jmesnil/stomp-websocket debug: line 145 --%>
-<script defer src="<c:url value="/public/vendors/stomp.min.js"/>"></script>
+<script src="<c:url value="/public/vendors/stomp.min.js"/>"></script>
 <%-- https://github.com/sockjs/sockjs-client --%>
-<script defer src="<c:url value="/public/vendors/sockjs-0.3.4.js"/>"></script>
+<script src="<c:url value="/public/vendors/sockjs-0.3.4.js"/>"></script>
 
 <%--<script src="http://maps.googleapis.com/maps/api/js?v=3.exp"></script>--%>
 
-<script defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBDh2PIO2lCxaHKYf2s2BfG-hZ3MDnJDWQ&libraries=geometry"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBDh2PIO2lCxaHKYf2s2BfG-hZ3MDnJDWQ&libraries=geometry"></script>
 
-<script defer src="<c:url value="/public/js/app.min.js"/>"></script>
+<script src="<c:url value="/public/js/app.min.js"/>"></script>
 
 </body>
 </html>
