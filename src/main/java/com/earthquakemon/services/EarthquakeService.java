@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface EarthquakeService {
 
-    String URL_CONSULTA = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_hour.geojson";
+    String URL_CONSULTA = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_hour.geojson";
     String URL_PRUEBA = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_hour.geojson";
 
     /**

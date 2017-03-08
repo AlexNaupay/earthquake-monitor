@@ -8,6 +8,8 @@ import com.earthquakemon.services.EarthquakeService;
 import com.earthquakemon.usgs.FeatureCollectionMapper;
 import com.earthquakemon.usgs.models.FeatureCollection;
 import com.earthquakemon.utils.ServerRequest;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -17,8 +19,14 @@ import java.util.List;
 @Service
 public class EarthquakeServiceImpl implements EarthquakeService {
 
+    private static Log logger = LogFactory.getLog(EarthquakeServiceImpl.class);
+
+    private final EarthquakeRepository earthquakeRepository;
+
     @Autowired
-    private EarthquakeRepository earthquakeRepository;
+    public EarthquakeServiceImpl(EarthquakeRepository earthquakeRepository) {
+        this.earthquakeRepository = earthquakeRepository;
+    }
 
     @Override
     public Report fetchHigher(float magnitude) {
@@ -31,8 +39,8 @@ public class EarthquakeServiceImpl implements EarthquakeService {
     @Override
     public Report fetchHigher() {
         String report = ServerRequest.requestString(URL_CONSULTA);
+        logger.debug("Earthquake report:"+report);
         FeatureCollection featureCollection = FeatureCollectionMapper.mapperRow(report);
-
         return ReportMapper.mapper(featureCollection);
     }
 
